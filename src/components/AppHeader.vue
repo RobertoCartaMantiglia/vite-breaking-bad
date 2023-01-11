@@ -21,6 +21,7 @@ header {
 
     img {
         width: 60px;
+        margin-right: 0.5rem;
     }
 }
 </style>
