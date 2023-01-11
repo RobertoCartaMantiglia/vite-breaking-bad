@@ -42,7 +42,11 @@ export default {
             <div class="container">
                 <div class="row">
                     <div class="col-4 mb-3" v-for="card in cardsList">
-                        <img :src="card.card_images[0].image_url" alt="#">
+                        <div class="card">
+                            <img :src="card.card_images[0].image_url" alt="#">
+                            <p class="text-center fs-5">{{ card.name }}</p>
+                            <p class="text-center">{{ card.archetype }}</p>
+                        </div>
 
                     </div>
                 </div>
@@ -52,5 +56,17 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+main {
+    background-color: bisque;
+    padding-top: 1rem;
+}
 
+.card {
+    background-color: coral;
+
+    img {
+        align-self: center;
+        width: 90%;
+    }
+}
 </style>
