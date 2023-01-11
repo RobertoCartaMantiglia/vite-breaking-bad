@@ -41,6 +41,9 @@ export default {
         <section>
             <div class="container">
                 <div class="row">
+                    <div>
+                        <p>Trovate {{ cardsList.length }} carte del deck</p>
+                    </div>
                     <div class="col-4 mb-3" v-for="card in cardsList">
                         <div class="card">
                             <img :src="card.card_images[0].image_url" alt="#">
