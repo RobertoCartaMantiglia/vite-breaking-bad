@@ -1,5 +1,5 @@
 <script>
-import store from '../store.js';
+import { store } from '../store.js';
 
 export default {
     data() {
@@ -15,7 +15,7 @@ export default {
         <section>
             <div class="container">
                 <div class="row">
-
+                    <p>{{ store.serchText }}</p>
                 </div>
             </div>
         </section>

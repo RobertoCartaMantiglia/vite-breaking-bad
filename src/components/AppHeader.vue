@@ -20,7 +20,7 @@ header {
     height: 80px;
 
     img {
-        width: 60px;
+        width: 80px;
         margin-right: 0.5rem;
     }
 }
