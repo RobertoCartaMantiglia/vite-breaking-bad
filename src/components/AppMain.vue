@@ -7,14 +7,18 @@ export default {
     data() {
         return {
             store,
+            apiUrl: 'https://db.ygoprodeck.com/api/v7/cardinfo.php?num=12&offset=0 ',
             cardsList: [],
+
         }
     },
     methods: {
         getCard() {
-            axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=12&offset=0 ', {
+            axios.get(this.apiUrl, {
                 params: {
-                    ID: 12345
+                    num: 12,
+                    offset: 0,
+                    // archetype:
                 }
             })
                 .then((response) => {
