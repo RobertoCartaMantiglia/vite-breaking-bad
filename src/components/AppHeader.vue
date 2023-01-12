@@ -1,6 +1,12 @@
 <script>
 export default {
-    name: 'AppHeader'
+    name: 'AppHeader',
+
+    data() {
+        return {
+            serchedText: "",
+        }
+    }
 }
 </script>
 
@@ -11,6 +17,7 @@ export default {
                 <img src="https://upload.wikimedia.org/wikipedia/commons/1/11/Yu-Gi-Oh%21_%28Logo%29.jpg" alt="logo">
                 <h1 class="fs-4">Yu-Gi-Oh Api</h1>
             </div>
+
         </div>
     </header>
 </template>

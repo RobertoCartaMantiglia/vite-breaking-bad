@@ -13,12 +13,12 @@ export default {
         }
     },
     methods: {
-        getCard() {
+        getCard(searchedString) {
             axios.get(this.apiUrl, {
                 params: {
                     num: 12,
                     offset: 0,
-                    // archetype:
+                    archetype: searchedString
                 }
             })
                 .then((response) => {
@@ -45,6 +45,11 @@ export default {
         <section>
             <div class="container">
                 <div class="row">
+                    <div>
+                        <input type="text" placeholder="ricerca le tue card" v-model="store.serchText"
+                            @keyup.enter="$emit('search')">
+
+                    </div>
                     <div>
                         <p>Trovate {{ cardsList.length }} carte del deck</p>
                     </div>

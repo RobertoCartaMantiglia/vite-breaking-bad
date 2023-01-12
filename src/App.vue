@@ -13,7 +13,7 @@ export default {
 <template>
 
   <AppHeader />
-  <AppMain />
+  <AppMain @search="" />
 
 </template>
 
