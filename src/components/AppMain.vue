@@ -18,18 +18,33 @@ export default {
         }
     },
     methods: {
-        getCard(searchedString) {
+        getCard() {
             axios.get(this.apiUrl, {
                 params: {
                     num: 12,
                     offset: 0,
-                    archetype: searchedString
                 }
             })
                 .then((response) => {
                     console.log(response.data.data);
                     this.cardsList = response.data.data;
                     // console.log(response.data.data[0].card_images)
+                })
+                .catch(function (error) {
+                    console.log(error);
+                })
+                .finally(function () {
+                });
+        },
+        getArchetype() {
+            axios.get(this.apiUrl, {
+                params: {
+                    archetype: store.serchArchetype,
+                }
+            })
+                .then((response) => {
+                    console.log(response.data.data);
+                    this.cardsList = response.data.data;
                 })
                 .catch(function (error) {
                     console.log(error);
@@ -50,7 +65,7 @@ export default {
         <section>
             <div class="container">
                 <div class="row">
-                    <CardSearcher @changeArchetype="" />
+                    <CardSearcher @changeArchetype="getArchetype()" />
                     <div>
                         <p>Trovate {{ cardsList.length }} carte del deck</p>
                     </div>

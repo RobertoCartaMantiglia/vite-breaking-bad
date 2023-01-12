@@ -13,7 +13,7 @@ export default {
 
 <template>
     <div class="mb-3">
-        <label for="" class="form-label">archetypes</label>
+        <label for="" class="form-label">Archetypes</label>
         <select class="form-select" @change="$emit('changeArchetype')" v-model="store.serchArchetype" name="" id="">
             <option selected>Select one</option>
             <option value="Alien">Alien</option>
