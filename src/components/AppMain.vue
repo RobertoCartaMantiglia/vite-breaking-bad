@@ -1,9 +1,14 @@
 <script>
 import { store } from '../store.js';
 import axios from 'axios';
+import CardSearcher from './CardSearcher.vue';
 
 export default {
     name: 'AppMain',
+    components: {
+        CardSearcher,
+    },
+
     data() {
         return {
             store,
@@ -45,11 +50,7 @@ export default {
         <section>
             <div class="container">
                 <div class="row">
-                    <div>
-                        <input type="text" placeholder="ricerca le tue card" v-model="store.serchText"
-                            @keyup.enter="$emit('search')">
-
-                    </div>
+                    <CardSearcher @changeArchetype="" />
                     <div>
                         <p>Trovate {{ cardsList.length }} carte del deck</p>
                     </div>
